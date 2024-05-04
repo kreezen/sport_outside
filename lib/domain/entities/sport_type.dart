@@ -3,8 +3,7 @@ enum SportType {
   Soccer("Soccer"),
   Basketball("Basketball"),
   Calisthenics("Calisthenics"),
-  Skaten("Skaten"),
-  Other("Other");
+  Skaten("Skaten");
 
   final String label;
   const SportType(this.label);

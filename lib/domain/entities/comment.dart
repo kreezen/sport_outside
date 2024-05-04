@@ -1,7 +1,9 @@
 class Comment {
-  final String? name;
-  final String comment;
+  final int id;
+  final String? author;
+  final String text;
   final DateTime date;
 
-  Comment({this.name, required this.comment, required this.date});
+  Comment(
+      {required this.id, this.author, required this.text, required this.date});
 }
