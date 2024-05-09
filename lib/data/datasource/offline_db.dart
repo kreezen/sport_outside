@@ -21,7 +21,7 @@ class OfflineDB implements IApi {
 
   @override
   FutureOr<List<SportPlace>> getSportPlaces() async {
-    var w = await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 4));
     return _sportPlaces;
   }
 }
