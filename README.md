@@ -1,5 +1,6 @@
 # sportoutside
 A Sports finding App for outside activities
+
 Work in Progress
 
 ## Getting Started
