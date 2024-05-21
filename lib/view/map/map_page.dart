@@ -9,6 +9,7 @@ class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var loading = mapstore.of(context).loading..watch(context);
+
     return Scaffold(
       appBar: AppBar(
           actions: loading.value ? [const CircularProgressIndicator()] : []),

@@ -25,6 +25,10 @@ class CameraStore {
     }
   }
 
+  void deleteImg(int index) {
+    imageFiles.value.removeAt(index);
+  }
+
   void _handleLostData() async {
     final LostDataResponse response = await _cameraService.getLostData();
 
