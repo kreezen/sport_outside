@@ -1,6 +1,7 @@
 # sportoutside
+A Sports finding App for outside activities
 
-A new Flutter project.
+Work in Progress
 
 ## Getting Started
 
