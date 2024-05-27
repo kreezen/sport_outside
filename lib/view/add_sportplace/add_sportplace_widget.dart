@@ -12,11 +12,13 @@ class AddSportPlaceWidget extends StatelessWidget {
     var imageErr = cameraStore.of(context).imageError..watch(context);
 
     imageErr.listen(context, () {
-      final messenger = ScaffoldMessenger.of(context);
-      messenger.hideCurrentSnackBar();
-      messenger.showSnackBar(
-        SnackBar(content: Text(imageErr.value.toString())),
-      );
+      if (imageErr.value != null) {
+        final messenger = ScaffoldMessenger.of(context);
+        messenger.hideCurrentSnackBar();
+        messenger.showSnackBar(
+          SnackBar(content: Text(imageErr.value.toString())),
+        );
+      }
     });
 
     return Scaffold(
