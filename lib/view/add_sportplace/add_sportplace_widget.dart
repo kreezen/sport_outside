@@ -9,17 +9,14 @@ class AddSportPlaceWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var imageFiles = cameraStore.of(context).imageFiles..watch(context);
-    var imageErr = cameraStore.of(context).imageError;
+    var imageErr = cameraStore.of(context).imageError..watch(context);
 
     imageErr.listen(context, () {
-      if (imageErr.value != null) {
-        var errTxt = imageErr.value.toString();
-        final messenger = ScaffoldMessenger.of(context);
-        messenger.hideCurrentSnackBar();
-        messenger.showSnackBar(
-          SnackBar(content: Text(errTxt)),
-        );
-      }
+      final messenger = ScaffoldMessenger.of(context);
+      messenger.hideCurrentSnackBar();
+      messenger.showSnackBar(
+        SnackBar(content: Text(imageErr.value.toString())),
+      );
     });
 
     return Scaffold(
@@ -31,9 +28,9 @@ class AddSportPlaceWidget extends StatelessWidget {
           children: [
             Stack(
               children: [
-                imageFiles.value.isNotEmpty
-                    ? CarouselWidget(imageFiles: imageFiles.value)
-                    : FillerImg(),
+                imageFiles.value.maybeMap<Widget>(
+                    orElse: () => FillerImg(),
+                    data: (value) => CarouselWidget(imageFiles: value)),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 300,

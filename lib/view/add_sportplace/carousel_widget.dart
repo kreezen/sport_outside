@@ -20,7 +20,9 @@ class _CarouselWidgetState extends State<CarouselWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print(widget.imageFiles.length);
+    if (widget.imageFiles.isEmpty) {
+      return Container();
+    }
     return Column(
       children: [
         CarouselSlider.builder(
