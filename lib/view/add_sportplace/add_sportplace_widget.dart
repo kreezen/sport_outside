@@ -9,7 +9,7 @@ class AddSportPlaceWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var imageFiles = cameraStore.of(context).imageFiles..watch(context);
-    var imageErr = cameraStore.of(context).imageError..watch(context);
+    var imageErr = cameraStore.of(context).imageError;
 
     imageErr.listen(context, () {
       if (imageErr.value != null) {
