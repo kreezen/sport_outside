@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:signals/signals_flutter.dart';
 import 'package:sportoutside/main.dart';
 import 'package:sportoutside/view/add_sportplace/carousel_widget.dart';
+import 'package:sportoutside/view/add_sportplace/gps_field_widget.dart';
 
 class AddSportPlaceWidget extends StatelessWidget {
   const AddSportPlaceWidget({Key? key}) : super(key: key);
@@ -65,7 +66,8 @@ class AddSportPlaceWidget extends StatelessWidget {
                           },
                         ),
                       ],
-                    )
+                    ),
+                    GPSfiledWidget()
                   ]),
                 )
               ],
