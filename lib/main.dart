@@ -5,6 +5,7 @@ import 'package:lite_ref/lite_ref.dart';
 import 'package:sportoutside/data/datasource/offline_db.dart';
 import 'package:sportoutside/view/add_sportplace/add_sportplace_widget.dart';
 import 'package:sportoutside/view/add_sportplace/camera_store.dart';
+import 'package:sportoutside/view/add_sportplace/gps_store.dart';
 import 'package:sportoutside/view/map/map_page.dart';
 import 'package:sportoutside/view/map/map_store.dart';
 
@@ -13,6 +14,7 @@ final offlineDB = OfflineDB(
     amout: 100, spreadRadius: 0.1, startZone: const LatLng(48.37, 10.89));
 final mapstore = Ref.scoped((ctx) => MapStore(offlineDB));
 final cameraStore = Ref.scoped((ctx) => CameraStore());
+final gpsStore = Ref.scoped((ctx) => GpsStore());
 
 void main() {
   runApp(const LiteRefScope(child: MyApp()));

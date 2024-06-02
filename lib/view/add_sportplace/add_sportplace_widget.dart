@@ -37,41 +37,43 @@ class AddSportPlaceWidget extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 300,
-                  child: Column(children: [
-                    Text(
-                      "Select form gallery or camera",
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                          fontSize: 22,
-                          color: Colors.orangeAccent,
-                          background: Paint()..color = Colors.white),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconButton(
-                          icon: Icon(Icons.file_copy_outlined,
-                              color: Colors.orangeAccent),
-                          iconSize: 50,
-                          onPressed: () {
-                            cameraStore.of(context).galleryImage();
-                          },
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.camera_alt_outlined,
-                              color: Colors.orangeAccent),
-                          iconSize: 50,
-                          onPressed: () {
-                            cameraStore.of(context).cameraImage();
-                          },
-                        ),
-                      ],
-                    ),
-                    GPSfiledWidget()
-                  ]),
-                )
+                  child: Column(
+                    children: [
+                      Text(
+                        "Select form gallery or camera",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                            fontSize: 22,
+                            color: Colors.orangeAccent,
+                            background: Paint()..color = Colors.white),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          IconButton(
+                            icon: Icon(Icons.file_copy_outlined,
+                                color: Colors.orangeAccent),
+                            iconSize: 50,
+                            onPressed: () {
+                              cameraStore.of(context).galleryImage();
+                            },
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.camera_alt_outlined,
+                                color: Colors.orangeAccent),
+                            iconSize: 50,
+                            onPressed: () {
+                              cameraStore.of(context).cameraImage();
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ],
-            )
+            ),
+            GPSfiledWidget(),
           ],
         )));
   }
